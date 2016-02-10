@@ -4,10 +4,10 @@ import serial
 from requests_oauthlib import OAuth1Session
 import datetime
 
-CK = '8QLpI4ZDmxx1ZYmUtKWBH4DN6'                             # Consumer Key
-CS = 'zhd41KVW8h0riXmm6VDUzdJ66oTdBLXX6xDlnbNxu5Gq9oHQHV'         # Consumer Secret
-AT = '265428880-scFjoTD06rsLcXiWzzPvSbQPWXlexWU0MVrPA1Nk' # Access Token
-AS = 'CIb6cE2SaKLwFZILEvrWNLldONhnUQecflJGA6SxldT8C'         # Accesss Token Secert
+CK = os.environ["TWITTER_CK"]
+CS = os.environ["TWITTER_CS"]
+AT = os.environ["TWITTER_AT"]
+AS = os.environ["TWITTER_AS"]
 
 ser = serial.Serial("/dev/tty.usbmodem1421",9600)
 

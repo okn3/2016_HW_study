@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from requests_oauthlib import OAuth1Session
+import os
 
-CK = '8QLpI4ZDmxx1ZYmUtKWBH4DN6'                             # Consumer Key
-CS = 'zhd41KVW8h0riXmm6VDUzdJ66oTdBLXX6xDlnbNxu5Gq9oHQHV'         # Consumer Secret
-AT = '265428880-scFjoTD06rsLcXiWzzPvSbQPWXlexWU0MVrPA1Nk' # Access Token
-AS = 'CIb6cE2SaKLwFZILEvrWNLldONhnUQecflJGA6SxldT8C'         # Accesss Token Secert
+# zshrcに記述
+CK = os.environ["TWITTER_CK"]
+CS = os.environ["TWITTER_CS"]
+AT = os.environ["TWITTER_AT"]
+AS = os.environ["TWITTER_AS"]
 
 # ツイート投稿用のURL
 URL = "https://api.twitter.com/1.1/statuses/update.json"
@@ -22,6 +24,7 @@ def tweet(text):
     return req.status_code
 
 if __name__ == '__main__':
+    print CK, CS ,AT ,AS
     msg = raw_input("ツイートを入力\n__>")
     tweet_content = msg + "\n from tweet.py"
     print tweet(tweet_content)
