@@ -3,6 +3,7 @@
 import serial
 from requests_oauthlib import OAuth1Session
 import datetime
+import os
 
 CK = os.environ["TWITTER_CK"]
 CS = os.environ["TWITTER_CS"]
@@ -29,7 +30,11 @@ def tweet_test():
     now = datetime.datetime.now()
     msg = "部屋に誰か来たよ。\n" + now.strftime("%Y/%m/%d %H:%M:%S\n")
     tweet_content = msg + "\n from tweet.py"
-    print tweet(tweet_content) 
+    print tweet(tweet_content)
+
+def say_test():
+    msg = "部屋に誰か来たよ"
+    os.system("say "+ msg)
 
 if __name__ == '__main__':
     while True:
@@ -40,3 +45,4 @@ if __name__ == '__main__':
             msg = "部屋に誰か来たよ。\n" + now.strftime("%Y/%m/%d %H:%M:%S\n")
             tweet_content = msg + "\n from tweet.py"
             print tweet(tweet_content) 
+            say_test()

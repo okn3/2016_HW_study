@@ -32,8 +32,8 @@ def fc_control():
 
 def main():
 #        blink()
-#        on_off()
-    fc_control()
+        on_off()
+#    fc_control()
 
 if __name__ == '__main__':
     main()
